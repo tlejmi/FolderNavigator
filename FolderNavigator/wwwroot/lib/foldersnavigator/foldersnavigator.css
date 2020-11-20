@@ -1,0 +1,142 @@
+﻿.foldernavigator {
+    overflow-y: auto;
+    font-size: 12px
+}
+
+.foldernavigator ul {
+    list-style: none
+}
+
+.foldernavigator .foldernavigatorBreadCrumbs {
+    background: #f5f5f5;
+    margin: 0 !important;
+    padding: 5px 10px
+}
+
+.foldernavigator .foldernavigatorBreadCrumbs li {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0
+}
+
+.foldernavigator .foldernavigatorBreadCrumbs li:before {
+    content: "/";
+    color: #bbb;
+    padding: 0 10px
+}
+
+.foldernavigator .foldernavigatorBreadCrumbs li:first-child:before {
+    content: "";
+    padding: 0
+}
+
+.foldernavigator .foldernavigatorContent ul {
+    padding: 0;
+    margin: 0
+}
+
+.foldernavigator .foldernavigatorContent li {
+    cursor: pointer;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.foldernavigator .foldernavigatorContent li.selected {
+    background: #eee
+}
+
+.foldernavigator .foldernavigatorContent.icon i {
+    display: block
+}
+
+.foldernavigator .foldernavigatorContent.icon li {
+    display: inline-block;
+    text-align: center
+}
+
+.foldernavigator .foldernavigatorContent.icon span {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    line-height: 1.2
+}
+
+.foldernavigator .foldernavigatorContent.details li {
+    padding: 5px 10px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word
+}
+
+.foldernavigator .foldernavigatorContent.details span {
+    padding-left: 10px
+}
+
+.foldernavigator.x32 .foldernavigatorContent.icon li {
+    width: 80px;
+    height: 87px;
+    padding: 10px
+}
+
+.foldernavigator.x32 .foldernavigatorContent.icon i {
+    font-size: 32px
+}
+
+.foldernavigator.x32 .foldernavigatorContent.icon span {
+    margin-top: 5px;
+    height: 30px;
+    font-size: 12px
+}
+
+.foldernavigator.x22 .foldernavigatorContent.icon {
+    padding: 5px
+}
+
+.foldernavigator.x22 .foldernavigatorContent.icon li {
+    width: 70px;
+    height: 63px;
+    padding: 5px
+}
+
+.foldernavigator.x22 .foldernavigatorContent.icon i {
+    font-size: 22px
+}
+
+.foldernavigator.x22 .foldernavigatorContent.icon span {
+    margin-top: 5px;
+    height: 25px;
+    font-size: 11px
+}
+
+.foldernavigator.x16 .foldernavigatorContent.icon {
+    padding: 5px
+}
+
+.foldernavigator.x16 .foldernavigatorContent.icon li {
+    width: 64px;
+    height: 55px;
+    padding: 5px
+}
+
+.foldernavigator.x16 .foldernavigatorContent.icon i {
+    font-size: 16px
+}
+
+.foldernavigator.x16 .foldernavigatorContent.icon span {
+    margin-top: 5px;
+    height: 25px;
+    font-size: 11px
+}
+
+.foldernavigator .foldernavigatorContent.details i {
+    font-size: 16px;
+    diplay: inline-block;
+    vertical-align: middle
+}

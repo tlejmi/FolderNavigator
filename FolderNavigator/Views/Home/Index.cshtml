@@ -1,0 +1,30 @@
+﻿
+<div id="files">  </div>
+
+<script>
+
+    $(function() {
+
+
+
+        $("#files").foldersNavigator({
+            url: "/api/navigator/info",
+            path: '/',
+            method: "post",
+            view: 'icon',
+            select: false,
+            breadcrumbs: true,
+            onSelect: function (obj, file, folder, type) {
+                $("#select").html("You select a "+type+" "+folder+'/'+file);
+            },
+            onOpen: function (obj,file, folder, type) {
+                if (type ==='file') {
+                    alert("Open file: "+folder+'/'+file);
+                }
+            }
+        });
+       
+
+    });
+
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1><a id="user-content-jquery-file-browser-version-081" class="anchor" aria-hidden="true" href="#jquery-file-browser-version-081"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jQuery File Browser version 0.8.1</h1>
+<p>jQuery File Browser is a plugin for creating OS like file browsers.</p>
+<p><a href="http://codepen.io/jcubic/pen/aBKYRR" rel="nofollow">Demo</a></p>
+<h1><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>installation</h1>
+<p>to install you can grab the files from the repo or install from</p>
+<h2><a id="user-content-bower" class="anchor" aria-hidden="true" href="#bower"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bower</h2>
+<pre><code>bower install jquery.filebrowser --save
+</code></pre>
+<h2><a id="user-content-npm" class="anchor" aria-hidden="true" href="#npm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm</h2>
+<pre><code>npm install jquery.filebrowser --save
+</code></pre>
+<p>include the files:</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery.filebrowser.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">link</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/jquery.filebrowser.min.css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span>/&gt;</pre></div>
+<p>and you can use this code to initialize the plugin:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-k">function</span>() {
+    <span class="pl-k">var</span> browse <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#browser<span class="pl-pds">'</span></span>).<span class="pl-en">browse</span>({
+        root<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>,
+        separator<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>,
+        contextmenu<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        <span class="pl-en">dir</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">path</span>) {
+            <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">Promise</span>(<span class="pl-k">function</span>(<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>) {
+                 <span class="pl-k">if</span> (path <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>) {
+                     <span class="pl-en">resolve</span>({dirs<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>], files<span class="pl-k">:</span> []});
+                 } <span class="pl-k">else</span> <span class="pl-k">if</span> (path <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>/foo/<span class="pl-pds">'</span></span>) {
+                     <span class="pl-en">resolve</span>({dirs<span class="pl-k">:</span> [], files<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>baz<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>quux<span class="pl-pds">'</span></span>]});
+                 } <span class="pl-k">else</span> <span class="pl-k">if</span> (path <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>/bar/<span class="pl-pds">'</span></span>) {
+                     <span class="pl-en">resolve</span>({dirs<span class="pl-k">:</span> [], files<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>lorem<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>ipsum<span class="pl-pds">'</span></span>]});
+                 } <span class="pl-k">else</span> {
+                     <span class="pl-en">reject</span>(); <span class="pl-c"><span class="pl-c">//</span> for cases when you type wrong path in address bar</span>
+                 }
+             });
+        },
+        <span class="pl-en">open</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">filename</span>) {
+            <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>opening <span class="pl-pds">'</span></span> <span class="pl-k">+</span> filename);
+        }
+    });
+});</pre></div>
+<p>All user functions that modify the Directory like create, remove, copy, rename can return a promise,
+and the plugin will refresh the view (call dir function) when it's resolved.</p>
+<p>more examples and usage in <a href="https://github.com/jcubic/jquery.filebrowser/tree/master/examples">examples directory</a>.</p>
+<h1><a id="user-content-requirement" class="anchor" aria-hidden="true" href="#requirement"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirement</h1>
+<p>If you want context menu (enabled using contextmenu option) you'll need jQuery UI and of course you need jQuery itself.</p>
+<h1><a id="user-content-options" class="anchor" aria-hidden="true" href="#options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h1>
+<ul>
+<li>name - used to distinguish different filesystem for copying nad moving files (rename)</li>
+<li>dir - function that should return a promise that resolve to object <code>{files: &lt;ARRAY&gt;, dirs: &lt;ARRAY&gt;}</code> or return that object</li>
+<li>exists - function that will return true/false or a promise that resolve to true/false that indicate if file or directory exists (used when create new file/directory)</li>
+<li>separator - path separator (a string) usualy <code>/</code> or <code>\</code> (to use <code>\</code> you need to put <code>'\\'</code>) default /</li>
+<li>root - root of the filesystem, it can be any path like <code>/home/&lt;user&gt;</code>, default <code>/</code></li>
+<li>change - callback function that's called on refresh of the directory</li>
+<li>init - callack executed on initalization of the plugin</li>
+<li>item_class - function that should return addiional classes for the element (directory or file) you can use this to have different icons for C or D drive that's in root directory, see <a href="https://github.com/jcubic/jquery.filebrowser/tree/master/examples/windows.html">windows example</a></li>
+<li>dbclick_delay - if the time of the second click is lower then this but hight then rename_delay it's consider as action for rename a file or directory</li>
+<li>open - callback function executed with path of the file when you double click on the file</li>
+<li>rename - callback function called with old path nad new path when you rename a file or direcoty</li>
+<li>create - callback called with path of the new file or directory and string 'directory' or 'file' as second argument</li>
+<li>copy - callback executed when you copy a file using CTRL+C and CTRL+V</li>
+<li>upload - callback called with file object and the path when you drag and drop a file or directory to browser container, you can also drag into visible directory</li>
+<li>error - called when error accured like when you try to enter invalid path in address bar</li>
+<li>refresh_timer - timeout after fetch of the content of the file in miliseconds, used to see visible refresh when you change direcotry (you can set it to 0), default 100</li>
+<li>menu - should return object which keys are names of the context menu and values are other object (they will create submenus) or a function that will be executed when menu item is click it acceppt single argument string 'li' or 'content' depend if you click on file/directory or on empty browser space. example:</li>
+</ul>
+<div class="highlight highlight-source-js"><pre>    <span class="pl-en">menu</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">type</span>) {
+        <span class="pl-k">if</span> (type <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>li<span class="pl-pds">'</span></span>) {
+            <span class="pl-k">return</span> {
+                <span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">alert</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">$li</span>) {
+                    <span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>alert for item <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-smi">$li</span>.<span class="pl-c1">text</span>());
+                }
+            }
+        }  <span class="pl-k">else</span> {
+            <span class="pl-k">return</span> {
+                <span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">Create File</span><span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+                    <span class="pl-k">var</span> name <span class="pl-k">=</span> <span class="pl-en">prompt</span>(<span class="pl-s"><span class="pl-pds">'</span>name: <span class="pl-pds">'</span></span>);
+                    <span class="pl-k">var</span> path;
+                    <span class="pl-k">if</span> (name) {
+                        path <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-c1">join</span>(<span class="pl-c1">this</span>.<span class="pl-en">path</span>(), name);
+                    }
+                    <span class="pl-c1">this</span>.<span class="pl-en">create</span>(<span class="pl-s"><span class="pl-pds">'</span>file<span class="pl-pds">'</span></span>, path);
+                }
+            };
+        }
+    },</pre></div>
+<h1><a id="user-content-api-methods" class="anchor" aria-hidden="true" href="#api-methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API methods</h1>
+<ul>
+<li>path - return current path</li>
+<li>name - return settings name</li>
+<li>back - go back one directory</li>
+<li>destroy - remove all events and DOM nodes</li>
+<li>create - function(type, [path]) - create new directory of file (depend of first argument which is string 'file' or 'directory') if there is second argument it will create new file/directory of it's undefined it will create placeholder for file/directory with textarea to enter name</li>
+<li>copy - selected files/directories for later paste</li>
+<li>cut - like copy but when call paste it will remove old items</li>
+<li>paste - if cut was executed it will call settings.rename and if copy was called it will call settings.copy and then refresh all views with the same directory</li>
+<li>up - go up one directory</li>
+<li>show - call settings.dir and rerender the directory view</li>
+<li>join - return new path based on settings.separator and settings.root, accept any number of arguments</li>
+<li>split - split the path using settings.separator and settings.root</li>
+<li>walk - function(filename, fn) - call function for each file/directory the signature for callaback function: function(path_part, last, return_value) the function return value from last call to callback function, 3rd argument is a value from previous call to callback function.</li>
+</ul>
+<h1><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h1>
+<p>Licensed under <a href="http://opensource.org/licenses/MIT" rel="nofollow">MIT</a> license</p>
+<p>Copyright (c) 2016-2017 <a href="http://jcubic.pl/me" rel="nofollow">Jakub Jankiewicz</a></p>
+</body>
+</html>
